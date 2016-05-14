@@ -6,5 +6,5 @@ setup(name='YourAppName',
       author='Your Name',
       author_email='example@example.com',
       url='http://www.python.org/sigs/distutils-sig/',
-      install_requires=['bottle','json','requests','oauthlib>=0.6.2', 'requests>=2.0.0'],
+      install_requires=['bottle','json','requests','requests-oauthlib'],
      )
