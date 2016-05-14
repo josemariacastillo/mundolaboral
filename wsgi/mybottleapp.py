@@ -1,4 +1,4 @@
-from bottle import default_app, get, post, template, request, static_file, response,redirect
+from bottle import route,default_app, get, post, template, request, static_file, response,redirect
 #from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
 import requests
@@ -12,6 +12,7 @@ r=requests.get('https://api.infojobs.net/api/1/offer',headers=headers)
 @route('/')
 def inicio():
 	return template('index.tpl')
+
 @route('/ofertas')
 def ofertas():
 	if r.status_code==200:
