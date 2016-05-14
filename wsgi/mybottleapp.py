@@ -5,6 +5,26 @@ import requests
 import json
 
 
+headers = {'Authorization': 'Basic NGU5MzU0YzBiMWFlNGY3ZTlkNzU5MGE2NDMzM2YwMjI6RHU5eXpiQnd6M2JsUWhOeFRKZ0syckJUMWRjYUE0M0ZudnpDcTZDTVdRRjdoVERoaVg='}
+r=requests.get('https://api.infojobs.net/api/1/offer',headers=headers)
+
+
+@route('/')
+def inicio():
+	return template('index.tpl')
+@route('/ofertas')
+def ofertas():
+	if r.status_code==200:
+		dic=json.loads(r.text)
+	return template('prueba.tpl',ofertas=dic)
+
+@route('/static/<filepath:path>')
+def server_static(filepath):
+    return static_file(filepath, root='static')
+
+
+
+
 client_id='4e9354c0b1ae4f7e9d7590a64333f022'
 client_secret='Du9yzbBwz3blQhNxTJgK2rBT1dcaA43FnvzCq6CMWQF7hTDhiX'
 redirect_uri = 'http://mundolaboral-josemccotaniesgn.rhcloud.com/callback'
@@ -60,26 +80,6 @@ def info():
 
   else:
     redirect('/infojobs')
-
-
-headers = {'Authorization': 'Basic NGU5MzU0YzBiMWFlNGY3ZTlkNzU5MGE2NDMzM2YwMjI6RHU5eXpiQnd6M2JsUWhOeFRKZ0syckJUMWRjYUE0M0ZudnpDcTZDTVdRRjdoVERoaVg='}
-r=requests.get('https://api.infojobs.net/api/1/offer',headers=headers)
-
-
-@route('/')
-def inicio():
-	return template('index.tpl')
-@route('/ofertas')
-def ofertas():
-	if r.status_code==200:
-		dic=json.loads(r.text)
-	return template('prueba.tpl',ofertas=dic)
-
-@route('/static/<filepath:path>')
-def server_static(filepath):
-    return static_file(filepath, root='static')
-
-
 
 # This must be added in order to do correct path lookups for the views
 import os
