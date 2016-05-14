@@ -15,14 +15,6 @@ token_url = "https://www.infojobs.net/oauth/authorize"
 
 
 
-@get('/listacv')
-def get_token():
-	if r.status_code==200:
-		r="hola"
-		
-    return template('listacv.tpl',respuesta=r)
-
-
 def token_valido():
   token=request.get_cookie("token", secret='some-secret-key')
   if token:
@@ -35,6 +27,41 @@ def token_valido():
   else:
     token_ok = False
   return token_ok
+
+
+@get('/infojobs')
+def info_youtube():
+  if token_valido():
+    redirect("/listacv")
+  else:
+    response.set_cookie("token", '',max_age=0)
+    oauth2 = OAuth2Session(client_id, redirect_uri=redirect_uri,scope=scope)
+    authorization_url, state = oauth2.authorization_url('https://www.infojobs.net/oauth/authorize')
+    response.set_cookie("oauth_state", state)
+    redirect(authorization_url)
+
+@get('/callback')
+def get_token():
+
+  oauth2 = OAuth2Session(client_id, state=request.cookies.oauth_state,redirect_uri=redirect_uri)
+  token = oauth2.fetch_token(token_url, client_secret=client_secret,authorization_response=request.url)
+  response.set_cookie("token", token,secret='some-secret-key')
+  redirect("/listacv")
+  
+@get('/listacv')
+def info():
+  if token_valido():
+    token=request.get_cookie("token", secret='some-secret-key')
+    oauth2 = OAuth2Session(client_id, token=token)
+    r = oauth2.get('https://api.infojobs.net/api/1/curriculum')
+    if r.status_code==200:
+      r="hola"
+    return template('listacv.tpl',respuesta=r)
+
+
+  else:
+    redirect('/infojobs')
+
 
 headers = {'Authorization': 'Basic NGU5MzU0YzBiMWFlNGY3ZTlkNzU5MGE2NDMzM2YwMjI6RHU5eXpiQnd6M2JsUWhOeFRKZ0syckJUMWRjYUE0M0ZudnpDcTZDTVdRRjdoVERoaVg='}
 r=requests.get('https://api.infojobs.net/api/1/offer',headers=headers)
