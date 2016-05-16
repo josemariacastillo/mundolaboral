@@ -3,8 +3,7 @@ from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
 import requests
 import json
-import os 
-os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+
 
 headers = {'Authorization': 'Basic NGU5MzU0YzBiMWFlNGY3ZTlkNzU5MGE2NDMzM2YwMjI6RHU5eXpiQnd6M2JsUWhOeFRKZ0syckJUMWRjYUE0M0ZudnpDcTZDTVdRRjdoVERoaVg='}
 r=requests.get('https://api.infojobs.net/api/1/offer',headers=headers)
