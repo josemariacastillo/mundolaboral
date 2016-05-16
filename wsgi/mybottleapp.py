@@ -56,7 +56,7 @@ def info_youtube():
   else:
     response.set_cookie("token", '',max_age=0)
     oauth2 = OAuth2Session(client_id, redirect_uri=redirect_uri,scope=scope)
-    authorization_url, state = oauth2.authorization_url('https://www.infojobs.net/oauth/authorize')
+    authorization_url, state = oauth2.authorization_url('https://www.infojobs.net/api/oauth/user-authorize/index.xhtml')
     response.set_cookie("oauth_state", state)
     redirect(authorization_url)
 
