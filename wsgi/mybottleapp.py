@@ -9,6 +9,7 @@ headers = {'Authorization': 'Basic NGU5MzU0YzBiMWFlNGY3ZTlkNzU5MGE2NDMzM2YwMjI6R
 r=requests.get('https://api.infojobs.net/api/1/offer',headers=headers)
 
 
+
 @route('/')
 def inicio():
   os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
