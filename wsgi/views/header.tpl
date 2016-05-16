@@ -39,7 +39,7 @@
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Inicio</a></li>
+                        <li class="active"><a href="/">Inicio</a></li>
                         <li class="dropdown">
                             <a href="/ofertas" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Ofertas de empleo <b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
