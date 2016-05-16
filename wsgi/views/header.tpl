@@ -48,8 +48,8 @@
                             </ul>
                         </li>
                         <li><a href="/listacv">Editar CV</a></li>
-                        <li><a href="blog.html">Geocalizar Ofertas</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/">Geocalizar Ofertas</a></li>
+                        <li><a href="/">Contact</a></li>
                     </ul>
                 </div>
             </div>
