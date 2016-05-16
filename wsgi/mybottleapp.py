@@ -6,7 +6,7 @@ import json
 
 
 headers = {'Authorization': 'Basic NGU5MzU0YzBiMWFlNGY3ZTlkNzU5MGE2NDMzM2YwMjI6RHU5eXpiQnd6M2JsUWhOeFRKZ0syckJUMWRjYUE0M0ZudnpDcTZDTVdRRjdoVERoaVg='}
-r=requests.get('https://api.infojobs.net/api/1/offer',headers=headers)
+re=requests.get('https://api.infojobs.net/api/1/offer',headers=headers)
 
 
 
@@ -17,8 +17,8 @@ def inicio():
 
 @route('/ofertas')
 def ofertas():
-	if r.status_code==200:
-		dic=json.loads(r.text)
+	if re.status_code==200:
+		dic=json.loads(re.text)
 	return template('prueba.tpl',ofertas=dic)
 
 @route('/static/<filepath:path>')
