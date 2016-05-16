@@ -3,7 +3,7 @@ from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
 import requests
 import json
-import os
+
 
 headers = {'Authorization': 'Basic NGU5MzU0YzBiMWFlNGY3ZTlkNzU5MGE2NDMzM2YwMjI6RHU5eXpiQnd6M2JsUWhOeFRKZ0syckJUMWRjYUE0M0ZudnpDcTZDTVdRRjdoVERoaVg='}
 r=requests.get('https://api.infojobs.net/api/1/offer',headers=headers)
@@ -12,7 +12,7 @@ r=requests.get('https://api.infojobs.net/api/1/offer',headers=headers)
 
 @route('/')
 def inicio():
-  os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+  
   return template('index.tpl')
 
 @route('/ofertas')
@@ -30,7 +30,7 @@ def server_static(filepath):
 
 client_id='4e9354c0b1ae4f7e9d7590a64333f022'
 client_secret='Du9yzbBwz3blQhNxTJgK2rBT1dcaA43FnvzCq6CMWQF7hTDhiX'
-redirect_uri = 'http://mundolaboral-josemccotaniesgn.rhcloud.com/callback'
+redirect_uri = 'https://mundolaboral-josemccotaniesgn.rhcloud.com/callback'
 scope = ['CV']
 token_url = "https://www.infojobs.net/api/oauth/user-authorize/index.xhtml"
 
