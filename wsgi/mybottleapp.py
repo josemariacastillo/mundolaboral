@@ -12,8 +12,7 @@ r=requests.get('https://api.infojobs.net/api/1/offer',headers=headers)
 @route('/')
 def inicio():
   os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
-
-	return template('index.tpl')
+  return template('index.tpl')
 
 @route('/ofertas')
 def ofertas():
