@@ -28,7 +28,7 @@ def server_static(filepath):
 
 client_id='4e9354c0b1ae4f7e9d7590a64333f022'
 client_secret='Du9yzbBwz3blQhNxTJgK2rBT1dcaA43FnvzCq6CMWQF7hTDhiX'
-redirect_uri = 'https://mundolaboral-josemccotaniesgn.rhcloud.com/callback'
+redirect_uri = 'http://mundolaboral-josemccotaniesgn.rhcloud.com/callback'
 scope = ['CV']
 token_url = "https://www.infojobs.net/api/oauth/user-authorize/index.xhtml"
 
