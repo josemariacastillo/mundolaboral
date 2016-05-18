@@ -73,7 +73,7 @@ def get_token():
 @get('/listacv')
 def info():
   if token_valido():
-    token=request.get_cookie("token", secret='some-secret-key')
+    token=request.get_cookie("token", secret='Du9yzbBwz3blQhNxTJgK2rBT1dcaA43FnvzCq6CMWQF7hTDhiX')
     oauth2 = OAuth2Session(client_id, token=token)
     r = oauth2.get('https://api.infojobs.net/api/1/curriculum')
     if r.status_code==200:
