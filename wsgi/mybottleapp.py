@@ -38,7 +38,7 @@ token_url = "https://www.infojobs.net/api/oauth/user-authorize/index.xhtml"
 
 
 def token_valido():
-  token=request.get_cookie("token", secret='some-secret-key')
+  token=request.get_cookie("token", secret='Du9yzbBwz3blQhNxTJgK2rBT1dcaA43FnvzCq6CMWQF7hTDhiX')
   if token:
     token_ok = True
     try:
