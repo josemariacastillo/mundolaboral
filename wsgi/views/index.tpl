@@ -13,7 +13,7 @@
 	</div>
 	</section>
 	<section id="content">
-	<div class="col-md-12">
+	<div class="col-md-14">
 		<div class="box-gray aligncenter">
 			<div class="icon">
 				<div id="center_column" class=" grid_5">
