@@ -1,4 +1,4 @@
-% include('header.tpl', title='Temperaturas ') 
+% include('header.tpl', title='MundoLaboral ') 
   <section id="featured">
 	<!-- start slider -->
 	<div class="container">

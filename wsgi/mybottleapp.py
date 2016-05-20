@@ -24,10 +24,6 @@ def ofertas():
 
 
 
-
-
-
-
 client_id='4e9354c0b1ae4f7e9d7590a64333f022'
 client_secret='Du9yzbBwz3blQhNxTJgK2rBT1dcaA43FnvzCq6CMWQF7hTDhiX'
 redirect_uri = 'https://mundolaboral-josemccotaniesgn.rhcloud.com/callback'
@@ -79,6 +75,32 @@ def info():
   else:
     redirect('/infojobs')
   return template('listacv.tpl')
+
+@route('/resultado',method='POST') 
+def resultado():
+  busqueda=request.forms.get('busqueda')
+  headers = {'Authorization': 'Basic NGU5MzU0YzBiMWFlNGY3ZTlkNzU5MGE2NDMzM2YwMjI6RHU5eXpiQnd6M2JsUWhOeFRKZ0syckJUMWRjYUE0M0ZudnpDcTZDTVdRRjdoVERoaVg='}
+  payload = {'q':busqueda}
+  r=requests.get('https://api.infojobs.net/api/1/offer',headers=headers,params=payload)
+  if r.status_code==200:
+    dic=json.loads(r.text)
+    ciudades={}
+    for i in dic["offers"]:
+      ciudad = unicodedata.normalize('NFKD', i["city"]).encode('ascii','ignore')
+      if ciudades.has_key(ciudad):
+        lista = ciudades.get(ciudad)
+      else:
+        lista = []
+      titulo = unicodedata.normalize('NFKD', i["title"]).encode('ascii','ignore')
+      url = unicodedata.normalize('NFKD', i["link"]).encode('ascii','ignore')
+      lista.append({'titulo':titulo, 'url':url})
+      ciudades[ciudad]=lista
+        
+    datos=json.dumps(ciudades)
+
+  else:
+    print r.status_code
+  return template('mapa.tpl',ci=ciudades)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):

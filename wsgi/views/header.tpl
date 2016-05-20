@@ -16,11 +16,9 @@
 
 <!-- Theme skin -->
 <link href="/static/skins/default.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+
 
 </head>
 <body>
@@ -41,15 +39,18 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">Inicio</a></li>
                         <li class="dropdown">
-                            <a href="/ofertas" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Ofertas de empleo <b class=" icon-angle-down"></b></a>
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Geocalizar Ofertas<b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="typography.html">Por Provincia</a></li>
-                                <li><a href="components.html">Por Categoria</a></li>
+                                <li><form action="/resultado" method="post">
+                                      Busqueda:<input name="busqueda" type="text" />
+                                               <input value="resultado" type="submit"/>
+                                           
+                                    </form></li>
+                               
                             </ul>
                         </li>
-                        <li><a href="/listacv">Editar CV</a></li>
-                        <li><a href="/">Geocalizar Ofertas</a></li>
-                        <li><a href="/">Contact</a></li>
+                        <li><a href="/listacv">Lista de Ofertas</a></li>
+                        
                     </ul>
                 </div>
             </div>
