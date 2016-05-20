@@ -21,17 +21,10 @@ def ofertas():
 		dic=json.loads(re.text)
 	return template('prueba.tpl',ofertas=dic)
 
-@route('/static/<filepath:path>')
-def server_static(filepath):
-    return static_file(filepath, root='static')
 
 
 
 
-    Client ID:
-    4e9354c0b1ae4f7e9d7590a64333f022
-    Client secret:
-    Du9yzbBwz3blQhNxTJgK2rBT1dcaA43FnvzCq6CMWQF7hTDhiX
 
 
 
@@ -83,13 +76,15 @@ def info():
     token=request.get_cookie("token", secret='Du9yzbBwz3blQhNxTJgK2rBT1dcaA43FnvzCq6CMWQF7hTDhiX')
     oauth2 = OAuth2Session(client_id, token=token)
     r = oauth2.get('https://api.infojobs.net/api/1/curriculum')
-    if r.status_code==200:
-      r="hola"
-    return template('listacv.tpl',respuesta=r)
-
-
   else:
     redirect('/infojobs')
+  return template('listacv.tpl')
+
+@route('/static/<filepath:path>')
+def server_static(filepath):
+    return static_file(filepath, root='static')
+
+
 
 # This must be added in order to do correct path lookups for the views
 import os
