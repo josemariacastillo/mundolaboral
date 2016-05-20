@@ -42,7 +42,7 @@
                             <a class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Geocalizar Ofertas<b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
                                 <li><form action="/resultado" method="post">
-                                      Busqueda:<input name="busqueda" type="text" />
+                                      <label>Busqueda:</label><input name="busqueda" type="text" />
                                                <input value="resultado" type="submit"/>
                                            
                                     </form></li>
