@@ -39,7 +39,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">Inicio</a></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Geocalizar Ofertas<b class=" icon-angle-down"></b>
+                            <a class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Geocalizar Ofertas<b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
                                 <li><form action="/resultado" method="post">
                                       Busqueda:<input name="busqueda" type="text" />
