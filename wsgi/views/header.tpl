@@ -39,7 +39,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">Inicio</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Geocalizar Ofertas<b class=" icon-angle-down"></b></a>
+                            <a class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Geocalizar Ofertas<b class=" icon-angle-down"></b>
                             <ul class="dropdown-menu">
                                 <li><form action="/resultado" method="post">
                                       Busqueda:<input name="busqueda" type="text" />
@@ -49,7 +49,7 @@
                                
                             </ul>
                         </li>
-                        <li><a href="/listacv">Lista de Ofertas</a></li>
+                        <li><a href="/ofertas">Lista de Ofertas</a></li>
                         
                     </ul>
                 </div>
