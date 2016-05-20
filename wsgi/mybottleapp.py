@@ -38,7 +38,7 @@ token_url = "https://www.infojobs.net/api/oauth/user-authorize/index.xhtml"
 
 
 def token_valido():
-  token=request.get_cookie("token", secret='Du9yzbBwz3blQhNxTJgK2rBT1dcaA43FnvzCq6CMWQF7hTDhiX')
+  token=request.get_cookie("token", secret='4e9354c0b1ae4f7e9d7590a64333f022')
   if token:
     token_ok = True
     try:
@@ -67,13 +67,13 @@ def get_token():
 
   oauth2 = OAuth2Session(client_id, state=request.cookies.oauth_state,redirect_uri=redirect_uri)
   token = oauth2.fetch_token(token_url, client_secret=client_secret,authorization_response=request.url)
-  response.set_cookie("token", token,secret='Du9yzbBwz3blQhNxTJgK2rBT1dcaA43FnvzCq6CMWQF7hTDhiX')
+  response.set_cookie("token", token,secret='4e9354c0b1ae4f7e9d7590a64333f022')
   redirect("/listacv")
   
 @get('/listacv')
 def info():
   if token_valido():
-    token=request.get_cookie("token", secret='Du9yzbBwz3blQhNxTJgK2rBT1dcaA43FnvzCq6CMWQF7hTDhiX')
+    token=request.get_cookie("token", secret='4e9354c0b1ae4f7e9d7590a64333f022')
     oauth2 = OAuth2Session(client_id, token=token)
     r = oauth2.get('https://api.infojobs.net/api/1/curriculum')
     if r.status_code==200:

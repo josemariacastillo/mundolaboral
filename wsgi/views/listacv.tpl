@@ -1,4 +1,12 @@
-% include('header.tpl', title='Temperaturas ')
-
-<h1>%{{r}}</h1>
-% include('footer.tpl')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+	<form action="/resultado" method="post">
+	  Busqueda:<input name="busqueda" type="text" />
+		       <input value="resultado" type="submit"/>
+		   
+	</form> 
+</body>
+</html>  
