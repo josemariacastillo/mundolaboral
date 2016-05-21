@@ -14,13 +14,11 @@
 	</section>
 	<section id="content">
 	<div class="col-md-18">
-		<div class="box-gray aligncenter">
-			<div class="icon">
+		<div class="box-white aligncenter">
 				<div id="center_column" class=" grid_5">
 					<img src="/static/img/slides/principal.jpg">
 
-				</div>
-			</div>	
+				</div>	
         </div>						
 		
 		

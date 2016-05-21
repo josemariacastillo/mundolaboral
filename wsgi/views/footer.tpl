@@ -1,18 +1,4 @@
 <footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3">
-				<div class="widget">
-					<h5 class="widgetheading">Páginas</h5>
-					<ul class="link-list">
-						<li><a href="https://www.infojobs.net/">Infojobs</a></li>
-						<li><a href="https://es.linkedin.com/">Linkedin</a></li>
-						<li><a href="http://www.infoempleo.com/">Infoempleo</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div id="sub-footer">
 		<div class="container">
 			<div class="row">
