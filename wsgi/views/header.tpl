@@ -41,9 +41,11 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Geocalizar Ofertas<b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
-                                <li><form action="/resultado" method="post">
-                                      <label>Busqueda:</label><input name="busqueda" type="text" />
-                                               <input value="resultado" type="submit"/>
+                                <li><form action="/resultado" method="post" role="form">
+                                        <div class="form-group">
+                                      <input name="busqueda" type="text" placeholder="Buscar..." class="form-control" required/>
+                                               <button type="submit" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
+                                        </div>
                                            
                                     </form></li>
                                

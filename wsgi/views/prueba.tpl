@@ -1,15 +1,33 @@
 % include('header.tpl', title='Temperaturas ')
-%for i in ofertas["offers"]:
-			<h2>Titulo:{{i["title"]}}</h2>
-			<p>Estudios:{{i["study"]["value"]}}</p>
-			<p>URL:{{i["author"]["uri"]}}</p>
-			<p>Empresa:{{i["author"]["name"]}}</p>
-			<p>Salario:{{i["salaryPeriod"]["value"]}}</p>
-			<p>Jornada:{{i["workDay"]["value"]}}</p>
-			<p>Experiencia:{{i["experienceMin"]["value"]}}</p>
-			<p>Tipo de Contrato:{{i["contractType"]["value"]}}</p>
-			<p>Categoría:{{i["category"]["value"]}}</p>
-			<p>Requerimientos:{{i["requirementMin"]}}</p>
-			<p>Salario Máximo:{{i["salaryMax"]["value"]}}</p>
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+<div class="row">
+%for index, i in enumerate(ofertas["offers"]):
+	%if index%3==0:
+		%if index != 0:
+			</div>
+		%end
+		<div class="row">
+	%end
+<div class="col-md-4" >
+	<div class="box-gray">
+       	<div class="box-gray">
+			<h3><a href="{{i["author"]["uri"]}}" target="_blank">{{i["title"]}}</a></h3>
+			<p><b>Estudios:</b> {{i["study"]["value"]}}</p>
+			<p><b>Empresa:</b> {{i["author"]["name"]}}</p>
+			<p><b>Jornada:</b> {{i["workDay"]["value"]}}</p>
+			<p><b>Experiencia:</b> {{i["experienceMin"]["value"]}}</p>
+			<p><b>Tipo de Contrato:</b> {{i["contractType"]["value"]}}</p>
+			<p><b>Categoría:</b> {{i["category"]["value"]}}</p>
+			<p><b>Requerimientos:</b> {{i["requirementMin"]}}</p>
+			<p><b>Salario Máximo:</b> {{i["salaryMax"]["value"]}}</p>
+		</div>
+	</div>
+</div>	
+
 %end
+	</div>
+</div>
+</div>
+</div>
 % include('footer.tpl')
