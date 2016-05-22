@@ -1,4 +1,4 @@
-% include('header.tpl', title='Temperaturas ')
+% include('header.tpl', title='MundoLaboral ')
 <div class="row">
 	<div class="col-md-10 col-md-offset-1">
 <div class="row">
