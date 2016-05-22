@@ -1,6 +1,6 @@
 % include('header.tpl', title='MundoLaboral ')
     
-    <div id="map" style="height: 500px; width:1270px;" class="box-white aligncenter"></div>
+    <div id="map"  class="map"></div>
     
     <script type="text/javascript">
       var key = "AIzaSyA3tPw8KWXy1diMpgStWOgtza_uixiUuzw";
