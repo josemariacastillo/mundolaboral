@@ -16,7 +16,7 @@
 	<div class="col-md-18">
 		<div class="box-white aligncenter">
 				<div id="pricipal">
-					<img src="/static/img/slides/principal.jpg">
+					<img src="/static/img/slides/principal.jpg"></img>
 
 				</div>	
         </div>						
