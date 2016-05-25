@@ -12,11 +12,11 @@
 		</div>
 	</div>
 	</section>
-	<section id="content">
+	
 	<div class="col-md-18">
 		<div class="box-white aligncenter">
 				<div id="pricipal">
-					<img src="/static/img/slides/principal.jpg"></img>
+					<img src="/static/img/slides/principal.jpg" alt="imagen principal">
 
 				</div>	
         </div>						
@@ -24,5 +24,5 @@
 		
 
 	</div>
-	</section>
+
 % include('footer.tpl')	
